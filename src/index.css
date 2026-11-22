@@ -1,6 +1,15 @@
 .flex {
   display: flex;
 }
+.mt{
+margin-top: 1em;
+}
+.mtt{
+margin-top: 2em;
+}
+.mttt{
+margin-top: 3em;
+}
 
 
 body {
@@ -23,7 +32,7 @@ code {
   font-family: sans-serif;
   text-decoration: none;
   list-style: none;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
 }
 
 html {
