@@ -8,14 +8,19 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import "./Tasks.css";
 import { FaPlus } from "react-icons/fa6";
 import { Link} from "react-router-dom";
+import Modal from "shared/Modal.jsx";
+import { useState } from "react";
 export default function Tasks() {
       let navigate = useNavigate();
   const [user, loading, error] = useAuthState(auth);
+    const [showModal, setShowModal] = useState(false);
   useEffect(() => {
     if(!user){
       navigate("/")
     }})
-
+const closeModal = () => {
+  setShowModal(false);
+}
         if (loading) {
     return (
       <div>
@@ -57,7 +62,12 @@ navigate("/")
       </select>
       <button >Newest first</button>
       <button>Oldest first</button>
-      <button className="add-task">Add task<FaPlus /></button>
+      <button className="add-task"
+      onClick={() => {
+        setShowModal(true);
+      }
+      }>Add task<FaPlus /></button>
+      {showModal && <Modal closeModal={closeModal}/>}
       </section>
 <section className="tasks-wrapper">
         {/* all taska */}
