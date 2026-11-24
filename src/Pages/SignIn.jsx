@@ -17,7 +17,7 @@ export default function SignIn() {
   const [error, setError] = useState(false);
   const [MessageError, setMessageError] = useState("");
   const [rsestEmail, setRsestEmail] = useState(false);
-  const [showForm, setShowForm] = useState("");
+  const [showModal, setShowModal] = useState(true);
   const [resetPassword, setResetPassword] = useState("");
   const signInBTN = (eo) => {
     eo.preventDefault();
@@ -105,42 +105,46 @@ export default function SignIn() {
           <p
             className="reset-pass"
             onClick={() => {
-              setShowForm("show-reset-password");
+              setShowModal(true);
             }}
           >
             reset password
           </p>
         </form>
-        <form className={`reset-password ${showForm}`}>
-          <div
-            onClick={() => {
-              setShowForm("");
-            }}
-            className="close"
-          >
-            X
-          </div>
-          <input
-            onChange={(eo) => {
-              setResetPassword(eo.target.value);
-            }}
-            required
-            placeholder="email:"
-            type="email"
-          />
-          <button
-            onClick={(eo) => {
-              resetPassBTN(eo);
-            }}
-          >
-            Reset password
-          </button>
-          {rsestEmail && (
-            <p className="reset-email">
-              Please check your email to reset your password
-            </p>
-          )}
-        </form>
+{showModal &&      
+   <div className="parent-modal">
+    <form className={`model`}>
+           <div
+             onClick={() => {
+               setShowModal(false);
+             }}
+             className="close"
+           >
+             X
+           </div>
+           <input
+             onChange={(eo) => {
+               setResetPassword(eo.target.value);
+             }}
+             required
+             placeholder="email:"
+             type="email"
+           />
+           <button
+             onClick={(eo) => {
+               resetPassBTN(eo);
+             }}
+           >
+             Reset password
+           </button>
+           {rsestEmail && (
+             <p className="reset-email">
+               Please check your email to reset your password
+             </p>
+           )}
+         </form>
+   </div>
+   }
       </main>
       <Footer />
     </div>
