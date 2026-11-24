@@ -16,7 +16,7 @@ export default function Home() {
       return (
         <div>
           <Header/>
-          <p>Error: {error}</p>
+          <p>Error: {error.message}</p>
             <Footer/>
         </div>
       );

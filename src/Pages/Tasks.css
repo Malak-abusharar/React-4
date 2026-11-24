@@ -70,3 +70,13 @@
   text-align: right;
   margin-right: 10px;
 }
+/* modal*/
+.task-model{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.sub-task{
+  display: flex;
+  gap: 8px;
+}

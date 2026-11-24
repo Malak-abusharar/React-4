@@ -1,6 +1,13 @@
-export default function Modal({closeModal}) {
+
+import "./Modal.css";
+import { Helmet} from 'react-helmet-async';
+
+export default function Modal({closeModal, children}) {
   return (
    <div className="parent-modal">
+    <Helmet>
+        <title>Modal Page</title>
+        </Helmet>
     <form className={`model`}>
            <div
              onClick={() => {
@@ -10,27 +17,8 @@ export default function Modal({closeModal}) {
            >
              X
            </div>
-           {/* <input
-             onChange={(eo) => {
-               setResetPassword(eo.target.value);
-             }}
-             required
-             placeholder="email:"
-             type="email"
-           />
-           <button
-             onClick={(eo) => {
-               resetPassBTN(eo);
-             }}
-           >
-             Reset password
-           </button>
-           {rsestEmail && (
-             <p className="reset-email">
-               Please check your email to reset your password
-             </p> */}
-           {/* ) */}
-           {/* } */}
+           {children}
+      
          </form>
    </div>
   )

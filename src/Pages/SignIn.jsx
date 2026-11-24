@@ -115,9 +115,31 @@ const closeModal = () => {
             reset password
           </p>
         </form>
-{showModal &&      
-<Modal closeModal={closeModal}/>
-   }
+{showModal &&  ( 
+<Modal closeModal={closeModal}>
+   <input
+             onChange={(eo) => {
+               setResetPassword(eo.target.value);
+             }}
+             required
+             placeholder="email:"
+             type="email"
+           />
+           <button
+             onClick={(eo) => {
+               resetPassBTN(eo);
+             }}
+           >
+             Reset password
+           </button>
+           {rsestEmail && (
+             <p className="reset-email">
+               Please check your email to reset your password
+             </p>
+         ) 
+            } 
+  </Modal>
+  )    }
       </main>
       <Footer />
     </div>

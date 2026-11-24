@@ -1,43 +1,8 @@
-.parent-modal {
-  /* border: 3px solid red; */
- position: fixed;
- top: 0;
- bottom: 0;
-left: 0;
-right: 0;
-z-index: 1000;
-background-color: rgb(0, 0, 0, 0.5);
-display: flex;
-align-items: center;
-justify-content: center;
-}
-.model{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 350px;
-  height: 250px;
-  position: fixed;
-  /* display: none; */
-  /* scale: 0; */
-}
+
 .show-reset-password{
     /* display: flex; */
     scale: 1;
 transition: 0.5s;
-}
-.close{
-color:black;
-font-size: 25px;
-position: absolute;
-top:12px;
-right: 15px;
-}
-.close:hover{
-  color:red;
-  font-size: 30px;
-  transform: rotate(80deg);
-  transform: 0.3s;
 }
 .reset-email{
   font-size: 15px;

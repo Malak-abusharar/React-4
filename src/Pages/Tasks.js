@@ -67,7 +67,41 @@ navigate("/")
         setShowModal(true);
       }
       }>Add task<FaPlus /></button>
-      {showModal && <Modal closeModal={closeModal}/>}
+      {showModal &&(<Modal closeModal={closeModal}>
+        <div className="task-modal">
+           <input
+               onChange={(eo) => {
+                 
+               }}
+               required
+               placeholder="task"
+               type="text"
+             />
+             <div className="sub-task">
+              <input
+                onChange={(eo) => {
+                  
+                }}
+                required
+                placeholder="sub-task"
+                type="text"
+              />
+              <button onClick={(eo) => {
+              eo.preventDefault();
+                }}>
+               add
+              </button>
+             </div>
+             <button
+               onClick={(eo) => {
+            eo.preventDefault();
+               }}
+             >
+               Submit
+             </button>
+        </div>
+           
+        </Modal>)}
       </section>
 <section className="tasks-wrapper">
         {/* all taska */}
