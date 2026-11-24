@@ -8,6 +8,7 @@ import Data from "./context/Data.jsx"
 import SignIn from "./Pages/SignIn.jsx";
 import SignUp from "./Pages/SignUp.jsx";
 import Error404 from "./Pages/Error404.jsx";
+import EditTask from "Pages/editTask/EditTask";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
     {
     path: "/Signup",
     element: <SignUp/>,
+      },
+  {
+    path: "/edit-task",
+    element: <EditTask/>,
   },
     {
     path: "*",

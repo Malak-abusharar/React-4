@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet-async";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./Tasks.css";
 import { FaPlus } from "react-icons/fa6";
+import { Link} from "react-router-dom";
 export default function Tasks() {
       let navigate = useNavigate();
   const [user, loading, error] = useAuthState(auth);
@@ -62,28 +63,14 @@ navigate("/")
         {/* all taska */}
 <section className="flex all-task">
   <article dir="auto" className="one-task">
+     <Link to="/edit-task">
     <h2>New Tasks</h2>
     <ul>
       <li>Sub task 1</li>
       <li>Sub task 2</li>
     </ul>
     <p className="time">a day ago</p>
-  </article>
-  <article dir="auto" className="one-task">
-    <h2>مهمة جديدة</h2>
-    <ul>
-      <li>مهمة فرعية 1</li>
-      <li>مهمة فرعية 2</li>
-    </ul>
-        <p className="time">قبل يوم</p>
-  </article>
-  <article dir="auto" className="one-task">
-    <h2>New Tasks</h2>
-    <ul>
-      <li>Sub task 1</li>
-      <li>Sub task 2</li>
-    </ul>
-        <p className="time">a day ago</p>
+    </Link>
   </article>
   </section>
 </section>
