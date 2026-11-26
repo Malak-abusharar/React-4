@@ -14,6 +14,9 @@ export default function Tasks() {
       let navigate = useNavigate();
   const [user, loading, error] = useAuthState(auth);
     const [showModal, setShowModal] = useState(false);
+    const [array, setArray] = useState([]);
+    const [subTask, setSubTask] = useState("");
+
   useEffect(() => {
     if(!user){
       navigate("/")
@@ -21,6 +24,12 @@ export default function Tasks() {
 const closeModal = () => {
   setShowModal(false);
 }
+const addBTN = (params) => {
+  array.push(subTask)
+  console.log(array);
+  setSubTask("")
+}
+
         if (loading) {
     return (
       <div>
@@ -80,18 +89,24 @@ navigate("/")
              <div className="sub-task">
               <input
                 onChange={(eo) => {
-                  
+                  setSubTask(eo.target.value)
                 }}
                 required
                 placeholder="sub-task"
                 type="text"
+                value={subTask}
               />
               <button onClick={(eo) => {
               eo.preventDefault();
+              addBTN()
                 }}>
                add
               </button>
              </div>
+             {array.map((item) => (
+               <li key={item}>{item}</li>
+             )
+             )}
              <button
                onClick={(eo) => {
             eo.preventDefault();

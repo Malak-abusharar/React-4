@@ -71,12 +71,18 @@
   margin-right: 10px;
 }
 /* modal*/
-.task-model{
+.task-modal{
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 .sub-task{
   display: flex;
   gap: 8px;
+}
+.task-modal li{
+  color: black;
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-bottom: 1px;
 }
