@@ -13,12 +13,17 @@ justify-content: center;
 }
 .model{
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
   width: 350px;
   height: 250px;
   position: fixed;
   animation: mymove 0.5s;
+  overflow-y: scroll;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
 }
 .close{
 color:black;
